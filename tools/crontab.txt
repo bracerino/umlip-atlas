@@ -1,0 +1,3 @@
+# uMLIP Atlas: refresh citation counts when they are at least 3 days old (checked every 6 h and at WSL start)
+0 */6 * * * /usr/bin/node /home/lebedmi2/DATA/MLIPs_Collection_Site/umlip-atlas/tools/update-citations.mjs --if-older-than 3 >> /home/lebedmi2/DATA/MLIPs_Collection_Site/umlip-atlas/tools/citations.log 2>&1
+@reboot sleep 120 && /usr/bin/node /home/lebedmi2/DATA/MLIPs_Collection_Site/umlip-atlas/tools/update-citations.mjs --if-older-than 3 >> /home/lebedmi2/DATA/MLIPs_Collection_Site/umlip-atlas/tools/citations.log 2>&1

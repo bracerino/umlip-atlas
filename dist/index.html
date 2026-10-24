@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>uMLIP Atlas — A curated research collection</title>
+  <meta name="description" content="A private, curated collection of universal and foundation interatomic-potential papers, with concise evidence-aware reading notes.">
+  <meta name="theme-color" content="#f7f8fa"><meta name="robots" content="noindex,nofollow">
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg"><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<a href="#collection" class="skip-link">Skip to papers</a>
+<aside class="sidebar" aria-label="Collection navigation">
+  <a class="brand" href="./" aria-label="uMLIP Atlas home"><img class="brand-icon" src="./favicon.svg" alt=""><span>uMLIP<span class="brand-light">atlas</span><small>THE RESEARCH COLLECTION</small></span></a>
+  <div class="nav-label">LIBRARY</div>
+  <nav><button class="nav-item active" data-nav="all"><span data-icon="library"></span>All papers <span class="nav-count" id="all-count">8</span></button><button class="nav-item" data-start><span data-icon="spark"></span>Start here<span class="nav-count" id="starter-nav-count">8</span></button></nav>
+  <div class="nav-label">RESEARCH FOCUS</div>
+  <nav><button class="nav-item" data-focus="Development"><span data-icon="layers"></span>Model development<span class="nav-count" data-focus-count="Development"></span></button><button class="nav-item" data-focus="Benchmark"><span data-icon="gauge"></span>Benchmarks<span class="nav-count" data-focus-count="Benchmark"></span></button><button class="nav-item" data-focus="Application"><span data-icon="flask"></span>Applications<span class="nav-count" data-focus-count="Application"></span></button></nav>
+  <details class="side-group" id="area-group"><summary class="nav-label">COLLECTIONS<span data-icon="chevron"></span></summary><nav id="area-nav" class="area-nav" aria-label="Collections"></nav></details>
+  <details class="side-group" id="model-group"><summary class="nav-label">MODELS<span data-icon="chevron"></span></summary><nav id="model-nav" class="area-nav" aria-label="Models"></nav></details>
+  <details class="side-group" id="year-group"><summary class="nav-label">PUBLICATION YEAR<span data-icon="chevron"></span></summary><nav id="year-nav" class="area-nav" aria-label="Publication year"></nav><div class="side-dates"><label>From <input id="from" type="date" aria-label="Published from"></label><label>Through <input id="to" type="date" aria-label="Published through"></label><p>Online publication date where recorded; otherwise first posted.</p></div></details>
+</aside>
+<div class="workspace">
+  <header class="topbar"><div><span class="breadcrumb">Library</span><span class="slash">/</span><strong>Paper collection</strong></div><span class="private-badge"><span data-icon="lock"></span>Private workspace</span></header>
+  <main>
+    <section class="intro" aria-labelledby="intro-title">
+      <div class="intro-copy"><a class="team-credit" id="team-link" href="https://implant.fs.cvut.cz" target="_blank" rel="noopener noreferrer"><img class="team-logo" src="./implant-logo.png" alt="IMPLANT Team logo" onerror="this.hidden=true"><span><span class="team-kicker">Curated collection by</span><strong>IMPLANT Team</strong></span></a><h1 id="intro-title">Universal ML interatomic potentials</h1><p>Papers on universal and foundation machine-learning interatomic potentials: model development, benchmarks and applications.</p><div class="collection-meta"><span><strong id="paper-total">8</strong> selected papers</span><span><strong id="model-total">7</strong> model families</span><span>Seed edition <span class="meta-arrow">↗</span></span></div></div>
+      <button class="featured" data-start><div class="featured-top"><span><span data-icon="spark"></span> START HERE</span><span>NEW TO uMLIPs?</span></div><div class="feature-graphic" aria-hidden="true"><svg viewBox="0 0 310 80"><path d="M12 12 C90 12 96 72 155 72 S222 12 298 12"/><path d="M12 38 C82 38 108 72 155 72 S230 38 298 38"/><circle cx="155" cy="72" r="4"/><text x="263" y="10">DFT</text><text x="255" y="61">uMLIP</text></svg></div><h2>A reading path into<br>universal potentials</h2><p>From the first universal models to benchmarks, known limitations and fine-tuning, in a suggested order.</p><div class="featured-bottom"><span><strong id="starter-count">8</strong> papers to start with</span><span class="round-arrow">↗</span></div></button>
+    </section>
+    <section id="collection" tabindex="-1" class="collection" aria-labelledby="collection-title">
+      <div class="collection-heading"><div><h2 id="collection-title">The collection <span id="heading-count">08</span></h2></div></div>
+      <div class="filter-panel">
+        <div class="search-row"><label class="search-box"><span data-icon="search"></span><input id="search" type="search" placeholder="Search papers, authors, or a research question…" aria-label="Search papers"><kbd>/</kbd></label><label class="sort-label"><span>Sort by</span><select id="sort" aria-label="Sort papers"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="cited">Most cited</option><option value="path">Starter reading order</option></select></label></div>
+      </div>
+      <div class="results-bar"><span id="result-count" role="status" aria-live="polite"></span><div id="active-filters"></div><button id="reset" class="text-button reset-button">Reset filters</button><span class="notes-key" id="read-count"></span></div>
+      <p id="date-error" class="date-error" role="alert" hidden>Choose a “From” date on or before the “Through” date.</p>
+      <div id="papers" class="papers"></div>
+      <div class="collection-footer"><span><span data-icon="check"></span>Primary sources linked in every entry</span><span>Sources checked 24 Oct 2026 · Representative seed, not a live feed</span></div>
+    </section>
+    <footer class="page-footer"><a class="small-brand" href="./">uMLIP<span>atlas</span></a><p>Good research deserves a thoughtful reading list.</p></footer>
+  </main>
+</div>
+<dialog id="paper-dialog" aria-labelledby="paper-title"><div class="dialog-top"><span class="eyebrow">READING NOTES</span><button id="close-paper" class="icon-button" aria-label="Close paper"><span data-icon="close"></span></button></div><div id="paper-detail"></div></dialog>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script type="module" src="./app.js"></script>
+</body></html>

@@ -1,0 +1,1 @@
+{"name": "umlip-paper-atlas", "private": true, "type": "module", "scripts": {"test": "node --test tests/core.test.mjs", "check": "node tools/check-sources.mjs", "check:update": "node tools/check-sources.mjs --update", "citations": "node tools/update-citations.mjs"}}

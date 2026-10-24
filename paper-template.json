@@ -1,0 +1,33 @@
+{
+  "id": "short-unique-slug",
+  "title": "Exact source title of the article",
+  "shortTitle": "Your one-line editorial question or takeaway",
+  "authors": "First Author, Second Author et al.",
+  "date": "YYYY-MM-DD",
+  "dateBasis": "Published online | First posted on arXiv",
+  "venue": "Journal name only, e.g. npj Computational Materials (or arXiv)",
+  "publisher": "e.g. Springer Nature, ACS, Elsevier (or null for arXiv)",
+  "status": "Journal article | Conference paper | Preprint / report",
+  "arxiv": "2501.01234 (or null)",
+  "arxivVersion": null,
+  "doi": "10.xxxx/xxxxx (or null)",
+  "type": "Development | Benchmark | Application",
+  "focus": "Short sub-topic, e.g. Model release, Surface energies",
+  "models": [
+    "MACE"
+  ],
+  "versions": "Model checkpoints or versions evaluated",
+  "areas": [
+    "Surfaces"
+  ],
+  "systems": "Which materials / systems the article is mostly about.",
+  "result": "Main result in two or three sentences.",
+  "source": "https://doi.org/... or https://arxiv.org/abs/...",
+  "sourceLabel": "Publisher · DOI",
+  "alternate": "optional second link",
+  "alternateLabel": "arXiv preprint",
+  "note": "Scope caveat.",
+  "lastChecked": null,
+  "read": false,
+  "starter": null
+}
