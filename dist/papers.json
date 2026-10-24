@@ -2,6 +2,46 @@
   "snapshotDate": "2026-10-24",
   "papers": [
     {
+      "id": "omat24-redundancy",
+      "title": "Atoms that Matter: Largest Materials Datasets Are 99% Redundant, and Local Chemistry Can Guide the Required 1%",
+      "shortTitle": "Is 1% of OMat24 enough to train a universal potential?",
+      "authors": "Evgeny Moerman, Igor Poltavsky, Anton Charkin-Gorbulin & Alexandre Tkatchenko",
+      "date": "2026-10-09",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2610.14392",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Development",
+      "focus": "Training-data selection",
+      "models": [
+        "MACE"
+      ],
+      "versions": "MACE trained on <1% subsets of OMat24 (random, DIRECT, EnvTok) vs MACE-OMAT-0",
+      "areas": [
+        "Datasets",
+        "Bulk materials"
+      ],
+      "systems": "OMat24 inorganic bulk materials; tests on formation energies, elastic moduli, heat capacities, Li⁺ migration barriers and MD stability up to 3000 K and 500 GPa.",
+      "result": "MACE models trained on 6.5 million atoms (<1% of OMat24) come within a few tens of meV/Å of the full-data MACE-OMAT-0 in forces and match or beat it on downstream properties, whichever selection method is used. Environment diversity, not dataset size, sets the information content; the model-free EnvTok method picks the needed structures before any labelling, making hybrid-DFT relabelling feasible.",
+      "source": "https://arxiv.org/abs/2610.14392",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed.",
+      "lastChecked": "2026-10-24",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/a840cc1c0781deedaf00fdf75871bb75c925a408",
+        "updated": "2026-10-24"
+      },
+      "starter": null
+    },
+    {
       "id": "carbide-elasticity",
       "title": "Benchmarking Universal Machine-Learning Interatomic Potentials for Temperature-Dependent Elasticity of Binary and High-Entropy Refractory Carbides",
       "shortTitle": "Which universal potentials capture high-temperature stiffness of carbides?",
@@ -39,6 +79,49 @@
         "count": 0,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/31a60843c5eb6db9576adcd0b8eae73ab22270f9",
+        "updated": "2026-10-24"
+      },
+      "starter": null
+    },
+    {
+      "id": "dos-benchmark-gap",
+      "title": "Structural benchmarks overlook density-of-states errors in machine-learned interatomic potentials",
+      "shortTitle": "Do good uMLIP structures give the right electronic DOS?",
+      "authors": "Shao-Yu Tseng, Guangshuai Han, Tianhao Li, Xiao Xu, Jiayue Hu, Gengyao Qiu & Corey Oses",
+      "date": "2026-09-23",
+      "dateBasis": "Published online",
+      "venue": "APL Machine Learning",
+      "publisher": "AIP Publishing",
+      "status": "Journal article",
+      "arxiv": null,
+      "arxivVersion": null,
+      "doi": "10.1063/5.0339982",
+      "type": "Benchmark",
+      "focus": "Electronic DOS from uMLIP geometries",
+      "models": [
+        "MACE",
+        "CHGNet",
+        "eSEN",
+        "UMA"
+      ],
+      "versions": "MACE-MATPES-PBE-0, CHGNet, eSEN-OAM, UMA-S",
+      "areas": [
+        "Bulk materials",
+        "Alloys"
+      ],
+      "systems": "1,500 inorganic crystals: 500 alloys, 500 oxides and 500 iodides, plus an equiatomic CoCrFeMoNi high-entropy alloy (49 ordered supercells).",
+      "result": "Structural accuracy (RMSD) barely predicts DOS agreement after a common DFT recalculation (Pearson r 0.03–0.24); errors are largest for iodides and oxides. MACE preserves symmetry most often (84%) and gives the largest speed-up (about 11–15× vs full DFT relaxation). Single-point DFT on uMLIP geometries still recovers Fermi energies, and 10 of 49 ordered configurations reproduce the HEA ensemble DOS.",
+      "source": "https://doi.org/10.1063/5.0339982",
+      "sourceLabel": "Publisher · DOI",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Open access (CC BY).",
+      "lastChecked": "2026-10-24",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/fa913820dc17cbd0eb150acf9ad87a3c4052a452",
         "updated": "2026-10-24"
       },
       "starter": null
