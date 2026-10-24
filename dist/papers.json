@@ -502,7 +502,7 @@
       "id": "defects-alloys",
       "title": "Universal machine learning interatomic potentials poised to supplant DFT in modeling general defects in metals and random alloys",
       "shortTitle": "Universal potentials for defects in metals and high-entropy alloys",
-      "authors": "Fei Shuang et al.",
+      "authors": "Fei Shuang, Zixiong Wei, Kai Liu, Wei Gao & Poulumi Dey",
       "date": "2025-07-21",
       "dateBasis": "Published online",
       "venue": "Machine Learning: Science and Technology",
@@ -512,22 +512,29 @@
       "arxivVersion": 2,
       "doi": "10.1088/2632-2153/adea2d",
       "type": "Benchmark",
-      "focus": "Defects in metals",
+      "focus": "Defects in metals and alloys",
       "models": [
-        "EquiformerV2"
+        "EquiformerV2",
+        "MACE",
+        "Orb",
+        "MatterSim",
+        "GRACE",
+        "DPA",
+        "CHGNet"
       ],
-      "versions": "Several pretrained universal models; EquiformerV2 performs best",
+      "versions": "26 checkpoints in 7 families: eqV2 (mp, omat, omat-mp-salex; 31M–153M), MACE-MP-0/MPA-0/OMAT-0, Orb-v2 variants, MatterSim-v1 1M/5M, GRACE-1L/2L (MP, OAM), DPA3-v1, CHGNet 0.3.0",
       "areas": [
         "Defects",
-        "Alloys"
+        "Alloys",
+        "Surfaces"
       ],
-      "systems": "Metals and alloys: grain boundaries and defects in pure metals, high-entropy alloys, hydrogen–alloy and solute–defect interactions; tungsten case study.",
-      "result": "Pretrained universal potentials are tested on a wide range of defects in metals and alloys. The latest EquiformerV2 models reach DFT-level accuracy (energies below 5 meV/atom, forces below 100 meV/Å RMSE), outperforming specialised MTP and ACE potentials. A tungsten case study shows pure-W data alone is insufficient.",
+      "systems": "Grain boundaries in 56 elemental metals; general defects in BCC Mo, Nb, Ta, W; Mg; MoNbTaW and other high-entropy alloys (CrCoNi, 10-element HEA); H in MoNbTaW near a screw dislocation; solute–defect interactions in W and Ta alloys; W free surfaces.",
+      "result": "OMat24-trained EquiformerV2 models reach DFT-level accuracy on most defect datasets (≤5 meV/atom, ≤70–100 meV/Å) and beat specialised MTP and ACE potentials on W and MoNbTaW grain boundaries. Free surfaces and magnetic systems (Fe, Cr, CrCoNi) remain weak points; GRACE models give the best accuracy–cost trade-off. Pure-W data alone is not enough for complex W defects.",
       "source": "https://doi.org/10.1088/2632-2153/adea2d",
       "sourceLabel": "Publisher · DOI",
       "alternate": "https://arxiv.org/abs/2502.03578",
       "alternateLabel": "arXiv preprint",
-      "note": "Only EquiformerV2 is named in the abstract; see the paper for the other models.",
+      "note": "Open access (CC BY). Static energies and forces only; eqV2 forces are non-conservative.",
       "lastChecked": "2026-10-24",
       "read": false,
       "citations": {
