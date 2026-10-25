@@ -154,12 +154,12 @@ a.cite-badge:hover{background:#ffe8c7}
 /* Team credit in the intro. */
 .team-credit{display:inline-flex;align-items:center;gap:14px;padding:10px 16px 10px 10px;border:1px solid #d7deea;border-radius:12px;background:#fff;transition:border-color .16s,box-shadow .16s}
 .team-credit:hover{border-color:#9db5ea;box-shadow:0 3px 12px #233d6814}
-.team-logo{height:44px;width:auto;max-width:140px;object-fit:contain}
+.team-logo{width:44px;height:44px;border-radius:9px;object-fit:cover;flex:none}
 .team-credit>span{display:grid;line-height:1.25}
 .team-kicker{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#4f5b6c}
 .team-credit strong{font-size:20px;font-weight:750;color:#14213a;letter-spacing:-.3px}
 .intro h1{font-size:40px;letter-spacing:-1.4px;margin:22px 0 14px}
-@media(max-width:700px){.intro h1{font-size:30px;letter-spacing:-1px}.team-logo{height:36px}.team-credit strong{font-size:18px}}
+@media(max-width:700px){.intro h1{font-size:30px;letter-spacing:-1px}.team-logo{width:36px;height:36px}.team-credit strong{font-size:18px}}
 
 /* Starter reading path. */
 .step-badge{margin-left:auto;margin-right:8px;font-size:12px;font-weight:750;color:#fff;background:var(--blue);border-radius:999px;padding:3px 10px}

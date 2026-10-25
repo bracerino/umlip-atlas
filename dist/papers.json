@@ -2,57 +2,6 @@
   "snapshotDate": "2026-10-24",
   "papers": [
     {
-      "id": "alloys-db-controls",
-      "title": "How good are universal MLIPs for alloys? A benchmark is only as trustworthy as its controls",
-      "shortTitle": "How much of a uMLIP's alloy error is really DFT disagreement?",
-      "authors": "Gus L. W. Hart & Jacob N. Pursley",
-      "date": "2026-10-22",
-      "dateBasis": "First posted on arXiv",
-      "venue": "arXiv",
-      "publisher": null,
-      "status": "Preprint / report",
-      "arxiv": "2610.30641",
-      "arxivVersion": 1,
-      "doi": null,
-      "type": "Benchmark",
-      "focus": "Intermetallic formation energies",
-      "models": [
-        "EquiformerV2",
-        "eSEN",
-        "UMA",
-        "MACE",
-        "SevenNet",
-        "GRACE",
-        "DPA",
-        "Orb",
-        "MatterSim",
-        "M3GNet",
-        "CHGNet"
-      ],
-      "versions": "14 models: eqV2, eSEN, UMA, MACE-OMAT/MPA, SevenNet-MF/0, GRACE-2L, DPA-3, Orb-v3, MatterSim-1M/5M, M3GNet, CHGNet",
-      "areas": [
-        "Alloys",
-        "Thermodynamics"
-      ],
-      "systems": "1.45 million ordered intermetallics from AFLOW (not in any model's training data), cross-checked against Alexandria and OQMD.",
-      "result": "Independent DFT databases disagree by 16–30 meV/atom on average, which sets a floor on any measurable uMLIP error. Re-referenced, the best model matches AFLOW as closely as Alexandria does and the next four sit only 2–7 meV/atom above the floor; eqV2's raw lead over eSEN shrinks to about 0.6 meV/atom. Several apparent failures, including poor shear moduli, vanish under the right controls.",
-      "source": "https://arxiv.org/abs/2610.30641",
-      "sourceLabel": "Author preprint · arXiv",
-      "alternate": null,
-      "alternateLabel": null,
-      "note": "Preprint; not yet peer reviewed. Submitted to npj Computational Materials.",
-      "lastChecked": "2026-10-25",
-      "read": false,
-      "citations": {
-        "count": 0,
-        "source": "Semantic Scholar",
-        "url": "https://www.semanticscholar.org/paper/7c614bd843c054349e6ad1c8c1cf4842abc18935",
-        "updated": "2026-10-25"
-      },
-      "starter": null,
-      "openAccess": null
-    },
-    {
       "id": "lora-thermal-conductivity",
       "title": "Symmetry-Based Parameter Efficient Low-Rank Fine-Tuning for High-Throughput Calculation of Lattice Thermal Conductivity",
       "shortTitle": "Fine-tuning one uMLIP per space group for thermal conductivity",
