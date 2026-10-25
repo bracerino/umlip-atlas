@@ -167,3 +167,12 @@ a.cite-badge:hover{background:#ffe8c7}
 .paper-meta .publisher{font-size:13px;font-weight:550;color:#4f5b6c}
 .paper-meta .publisher:before{content:'·';margin-right:8px;color:#7a8594}
 .card-actions{justify-content:flex-end}
+
+/* Full-text link: open-access journal version, or the arXiv PDF. */
+.read-link,.read-button{display:inline-flex;align-items:center;gap:6px;font-weight:650;color:#0f6b3c;background:#e9f7ef;border:1px solid #b6e0c6;border-radius:999px;white-space:nowrap}
+.read-link{font-size:13px;padding:4px 11px 4px 9px}
+.read-link .icon{width:14px;height:14px}
+.read-button{font-size:14px;padding:8px 14px 8px 12px;border-radius:5px}
+.read-button .icon{width:16px;height:16px}
+.read-link:hover,.read-button:hover{background:#d5f0df;border-color:#86c9a0}
+@media(max-width:700px){.read-link{font-size:12px}}

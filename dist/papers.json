@@ -2,6 +2,397 @@
   "snapshotDate": "2026-10-24",
   "papers": [
     {
+      "id": "alloys-db-controls",
+      "title": "How good are universal MLIPs for alloys? A benchmark is only as trustworthy as its controls",
+      "shortTitle": "How much of a uMLIP's alloy error is really DFT disagreement?",
+      "authors": "Gus L. W. Hart & Jacob N. Pursley",
+      "date": "2026-10-22",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2610.30641",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Benchmark",
+      "focus": "Intermetallic formation energies",
+      "models": [
+        "EquiformerV2",
+        "eSEN",
+        "UMA",
+        "MACE",
+        "SevenNet",
+        "GRACE",
+        "DPA",
+        "Orb",
+        "MatterSim",
+        "M3GNet",
+        "CHGNet"
+      ],
+      "versions": "14 models: eqV2, eSEN, UMA, MACE-OMAT/MPA, SevenNet-MF/0, GRACE-2L, DPA-3, Orb-v3, MatterSim-1M/5M, M3GNet, CHGNet",
+      "areas": [
+        "Alloys",
+        "Thermodynamics"
+      ],
+      "systems": "1.45 million ordered intermetallics from AFLOW (not in any model's training data), cross-checked against Alexandria and OQMD.",
+      "result": "Independent DFT databases disagree by 16–30 meV/atom on average, which sets a floor on any measurable uMLIP error. Re-referenced, the best model matches AFLOW as closely as Alexandria does and the next four sit only 2–7 meV/atom above the floor; eqV2's raw lead over eSEN shrinks to about 0.6 meV/atom. Several apparent failures, including poor shear moduli, vanish under the right controls.",
+      "source": "https://arxiv.org/abs/2610.30641",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed. Submitted to npj Computational Materials.",
+      "lastChecked": "2026-10-25",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/7c614bd843c054349e6ad1c8c1cf4842abc18935",
+        "updated": "2026-10-25"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "lora-thermal-conductivity",
+      "title": "Symmetry-Based Parameter Efficient Low-Rank Fine-Tuning for High-Throughput Calculation of Lattice Thermal Conductivity",
+      "shortTitle": "Fine-tuning one uMLIP per space group for thermal conductivity",
+      "authors": "Rustam Arabov, Konstantin Sozykin, Nikita Rybin & Alexander Shapeev",
+      "date": "2026-10-21",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2610.29634",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Application",
+      "focus": "Lattice thermal conductivity",
+      "models": [
+        "MatterSim"
+      ],
+      "versions": "MatterSim-v1 1M, LoRA fine-tuned per crystal symmetry (SBFS-FT)",
+      "areas": [
+        "Thermal transport",
+        "Fine-tuning"
+      ],
+      "systems": "Half-Heusler compounds (space group 216), rock-salt-type materials (225) and spinels (227).",
+      "result": "Low-rank fine-tuning of MatterSim on a few compounds sharing one space group gives lattice thermal conductivities 2–3 times closer to MTP/polyMLP references than the untuned model, about as accurate as fine-tuning each compound separately, and 5–7 times faster for 100 compounds.",
+      "source": "https://arxiv.org/abs/2610.29634",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed.",
+      "lastChecked": "2026-10-25",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/f595796d87140895a37081acd97203203c82302f",
+        "updated": "2026-10-25"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "disordered-carbon",
+      "title": "Challenging Atomistic Foundation Models on Disordered Carbons",
+      "shortTitle": "Do foundation potentials survive amorphous and porous carbon?",
+      "authors": "Joseph Hart, Samuel G. H. Brookes, Fabian L. Thiemann & Christoph Schran",
+      "date": "2026-10-19",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2610.26701",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Benchmark",
+      "focus": "Disordered carbon",
+      "models": [
+        "MACE",
+        "Orb",
+        "MatterSim",
+        "UMA"
+      ],
+      "versions": "MACE-MH-1-OMAT, MACE-MP-0b3, MACE-OMAT-0, ORB-v3-consv-inf-OMAT, MatterSim-5M, UMA-S-1.1-OMAT",
+      "areas": [
+        "Bulk materials"
+      ],
+      "systems": "Pure and O/H-containing disordered carbon: amorphous phases with competing sp2/sp3 hybridisation and nanoporous carbon frameworks.",
+      "result": "Low DFT energy and force errors hide unphysical binding curves and MD failures, especially with O/H. MACE-MH-1 is the most robust across all tests; OMAT-trained models share structural biases despite different architectures. All four MD-tested models reproduce the main experimental signatures of nanoporous carbon.",
+      "source": "https://arxiv.org/abs/2610.26701",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed. NeurIPS 2026 workshop paper (Sim2Science).",
+      "lastChecked": "2026-10-25",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/6a8c2ebe5b166a3888602db84ac5ee0c1adeef30",
+        "updated": "2026-10-25"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "compression-asymmetry",
+      "title": "Understanding compression-extension error asymmetry in universal machine-learning interatomic potentials",
+      "shortTitle": "Why are uMLIPs worse under compression than extension?",
+      "authors": "Hongwei Du, Dingyang Lv, Boyan Zhang, Yu Ren, Feng Yu, Xin He, Bonan Zhu, Yongda Huang, Jiahui Liu, Yongheng Li, Siqi Shi, Jianjun Liu, Ziheng Lu & Hong Wang",
+      "date": "2026-10-17",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2610.24514",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Benchmark",
+      "focus": "Strained structures",
+      "models": [
+        "Orb",
+        "GRACE",
+        "MACE",
+        "SevenNet",
+        "MatRIS",
+        "NequIP",
+        "PET",
+        "TACE",
+        "MatterSim",
+        "DPA",
+        "Prophet"
+      ],
+      "versions": "ORB-v3, GRACE-2L-OAM-L, MACE-MPA-0, SevenNet-Omni-I12, MatRIS-10M-OAM, NequIP-OAM-XL, PET-OAM-XL, TACE-OAM-L, MatterSim-5M, DPA3-v2-MPtrj, Prophet-OAME-MBD",
+      "areas": [
+        "Bulk materials"
+      ],
+      "systems": "1,963 MPtrj and 1,286 experimental (MinX-Eq) crystals under isotropic, uniaxial and biaxial strain from 1% to 10%.",
+      "result": "At ±10% strain every model has larger force errors under compression, by a factor of 2.1 (MPtrj) to 3.3 (MinX-Eq). Much of the gap reflects larger physical forces, but the experimental structures keep a genuine compression-side excess: compressed structures sit at shorter interatomic distances, farther from the training data.",
+      "source": "https://arxiv.org/abs/2610.24514",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed.",
+      "lastChecked": "2026-10-25",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/5a9ed0464a1221d31e271bb7b2219503d1673fef",
+        "updated": "2026-10-25"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "magpt",
+      "title": "Atomistic prediction of magnetic behaviour across chemistry, structure and temperature",
+      "shortTitle": "MagPT: a pretrained spin-lattice model for magnetic materials",
+      "authors": "Ruosong Shi, Chengbing Chen, Bicheng Liu, Daye Zheng, Duo Zhang, Zhengtao Huang, Teng Yang, Zefeng Cai, Xingliang Peng, Xinzijian Liu, Shenshen Yan, Xueqing Zhao, Jianbo Wang, Bin Liu, Han Wang, Ke Wang, Liuliu Han & Ben Xu",
+      "date": "2026-10-17",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2610.24407",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Development",
+      "focus": "Magnetic foundation model",
+      "models": [
+        "MagPT"
+      ],
+      "versions": "MagPT (new; species, positions and vector magnetic moments as input)",
+      "areas": [
+        "Magnetism",
+        "Alloys"
+      ],
+      "systems": "912,492 spin-lattice configurations over 48 elements, 0–1000 K and 0–10 GPa; tests on transition-metal alloys, elemental ferromagnets, Heusler shape-memory alloys, chiral magnets and high-entropy alloys.",
+      "result": "MagPT treats atomic moments as vectors, so it distinguishes magnetic states with the same structure but different spin configurations. It reproduces Slater–Pauling trends, finite-temperature magnetic phase evolution, long-wavelength non-collinear spin textures in chiral magnets and chemistry–magnetism coupling in high-entropy alloys.",
+      "source": "https://arxiv.org/abs/2610.24407",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed.",
+      "lastChecked": "2026-10-25",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/e82b2e5c0bf52078573ecbd92231a4fa95810784",
+        "updated": "2026-10-25"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "linear-response-phonons",
+      "title": "Linear response for machine-learned interatomic potentials: phonons at arbitrary wave vectors from the primitive cell",
+      "shortTitle": "Exact uMLIP phonons without supercells",
+      "authors": "Thalis H. B. da Silva, Hai-Chen Wang & Miguel A. L. Marques",
+      "date": "2026-10-16",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2610.23545",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Development",
+      "focus": "Phonon method",
+      "models": [
+        "NequIP",
+        "Prophet"
+      ],
+      "versions": "NequIP and Prophet (method applies to message-passing potentials unmodified)",
+      "areas": [
+        "Phonons"
+      ],
+      "systems": "Crystals from high-throughput phonon sets, including a low-symmetry silicate.",
+      "result": "The dynamical matrix of a message-passing potential is computed exactly in the primitive cell at any wave vector, as a Bloch-phase linear response (like DFPT); group velocities and Grüneisen parameters follow analytically. Deep universal models have force-constant ranges up to 140 Å, so standard supercells give errors of several tenths of a THz and even a spurious instability for one silicate.",
+      "source": "https://arxiv.org/abs/2610.23545",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed. Relevant to supercell-size artifacts in finite-displacement phonons.",
+      "lastChecked": "2026-10-25",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/65c62fbe4ac89b6012073463bf268380705391a5",
+        "updated": "2026-10-25"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "mad-cosmo",
+      "title": "Hierarchical universal open structure dataset for atomistic modeling",
+      "shortTitle": "MAD-COSMO: 1.7 billion open structures, stratified by diversity",
+      "authors": "Sofiia Chorna, Cesare Malosso, Jonathan Schmidt & Michele Ceriotti",
+      "date": "2026-10-15",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2610.21771",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Development",
+      "focus": "Dataset curation",
+      "models": [
+        "Multiple models"
+      ],
+      "versions": "Stratification metric built from the latent spaces of several universal MLIPs",
+      "areas": [
+        "Datasets"
+      ],
+      "systems": "Most open atomistic datasets combined: molecules, materials, surfaces and MD/relaxation trajectories.",
+      "result": "Introduces a protocol that sorts a dataset into nested subsets from coarse to fine diversity, using a metric based on uMLIP latent representations. Applied to almost all open datasets, it yields MAD-COSMO (about 1.7 billion structures) and the MAD-CORE coreset of its 2²⁴ (about 16.8 million) most diverse members for exploration and foundation-model training.",
+      "source": "https://arxiv.org/abs/2610.21771",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed.",
+      "lastChecked": "2026-10-25",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/809b9736e08ab40b1c76f30b1905c3636658e205",
+        "updated": "2026-10-25"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "rmc-amorphous-electrolyte",
+      "title": "A practical route to amorphous solid-state electrolyte structures by hybrid reverse Monte Carlo with foundation potentials",
+      "shortTitle": "Foundation potential + reverse Monte Carlo for amorphous electrolytes",
+      "authors": "Xintian Wang, Xinyu Zhang, Denys Butenko, Bolong Hong, Jinlong Zhu & Peichen Zhong",
+      "date": "2026-10-14",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2610.19846",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Application",
+      "focus": "Amorphous structure refinement",
+      "models": [
+        "MACE"
+      ],
+      "versions": "MACE-MH-1 (MatPES r2SCAN head)",
+      "areas": [
+        "Ion transport"
+      ],
+      "systems": "Amorphous Li0.9NbO0.9Cl4.1 oxychloride solid electrolyte, fitted to a neutron pair distribution function.",
+      "result": "A melt-quenched glass has the right local chemistry but misses order beyond 6 Å (R² = 0.29); pure reverse Monte Carlo fits the data (R² = 0.99) but sits over 1.3 eV/atom higher in energy. Hybrid schemes that add the foundation-potential energy reach R² = 0.92 within 0.1 eV/atom of the glass. Recommended route: quench with the foundation potential, then refine with a hybrid scheme.",
+      "source": "https://arxiv.org/abs/2610.19846",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed.",
+      "lastChecked": "2026-10-25",
+      "read": false,
+      "citations": {
+        "count": 1,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/7801fa731bef20077bbda1030912f924c6b1ffb1",
+        "updated": "2026-10-25"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "polaron-benchmark",
+      "title": "Can Universal Machine-Learning Interatomic Potentials Capture Small Polarons? A Geometry-Based Benchmark in Transition-Metal Oxides",
+      "shortTitle": "Can uMLIPs localize small polarons without electrons?",
+      "authors": "Vladislav Korostelev, Pjotrs Žguns & Konstantin Klyukin",
+      "date": "2026-10-12",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2610.17352",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Benchmark",
+      "focus": "Small polarons in oxides",
+      "models": [
+        "UMA",
+        "MatRIS",
+        "MACE",
+        "CHGNet"
+      ],
+      "versions": "UMA (uma-s-1p2, OMat task), MatRIS-10M-OAM, MACE-MPA-0, MACE-OMAT-0, CHGNet 0.3.0",
+      "areas": [
+        "Defects",
+        "Bulk materials"
+      ],
+      "systems": "H-doped transition-metal oxides: rutile TiO2, Sr2Fe2O5, Sr2Co2O5, Co3O4, NiO, V2O5, LiFePO4/FePO4, Cr2O3, CrO2 and others.",
+      "result": "Whether a uMLIP localizes an electron as a small polaron depends on its training data: oxides of cations without Hubbard U in the training set (e.g. Ti) delocalize, unlike DFT+U. UMA and MatRIS keep the Fe polaron in Sr2Fe2O5 where CHGNet and MACE-MPA lose it. Some models reproduce polaron hopping barriers, but none stabilize polarons separated from the H donor.",
+      "source": "https://arxiv.org/abs/2610.17352",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed.",
+      "lastChecked": "2026-10-25",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/7d64ce449fd318d5ec603e47d4fad25502030263",
+        "updated": "2026-10-25"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
       "id": "omat24-redundancy",
       "title": "Atoms that Matter: Largest Materials Datasets Are 99% Redundant, and Local Chemistry Can Guide the Required 1%",
       "shortTitle": "Is 1% of OMat24 enough to train a universal potential?",
@@ -37,9 +428,10 @@
         "count": 0,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/a840cc1c0781deedaf00fdf75871bb75c925a408",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "carbide-elasticity",
@@ -79,9 +471,10 @@
         "count": 0,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/31a60843c5eb6db9576adcd0b8eae73ab22270f9",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "dos-benchmark-gap",
@@ -122,9 +515,13 @@
         "count": 0,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/fa913820dc17cbd0eb150acf9ad87a3c4052a452",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1063/5.0339982",
+        "status": "diamond"
+      }
     },
     {
       "id": "thermal-conductivity",
@@ -166,9 +563,13 @@
         "count": 47,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/6501b185444b4cdc298a544a03e430710f6f117b",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s41467-026-76391-w",
+        "status": "gold"
+      }
     },
     {
       "id": "nep89",
@@ -208,9 +609,10 @@
         "count": 64,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/0d7e1bd1f966da93d0ec2285c6ba56fa26b3ef6d",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "omat24",
@@ -249,9 +651,10 @@
         "count": 24,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/f8a5021cdc625af086d929160a3529803a535ef2",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "uma-catalysts",
@@ -288,9 +691,13 @@
         "count": 4,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/acda89ec574fcd686a425d28449175aea04b38c9",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1021/acs.jpca.5c07061",
+        "status": "hybrid"
+      }
     },
     {
       "id": "foundation-review",
@@ -327,9 +734,10 @@
         "count": 69,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/b0c55ab3f1fc27757b02ca87a48f2e6f3dc2d59f",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": 1
+      "starter": 1,
+      "openAccess": null
     },
     {
       "id": "platonic-representations",
@@ -369,9 +777,13 @@
         "count": 18,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/10ade69eaaa7cdd7fe1f9d765413323b9795fd56",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s42256-026-01235-7",
+        "status": "hybrid"
+      }
     },
     {
       "id": "gum-metal-interstitials",
@@ -411,9 +823,13 @@
         "count": 3,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/d5664e42feb7645166c832663056182975baa171",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1016/j.jmrt.2026.02.204",
+        "status": "gold"
+      }
     },
     {
       "id": "mace-foundation",
@@ -454,9 +870,10 @@
         "count": 863,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/049a38af414db7c733a343b8d7fbf91707906d4c",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": 3
+      "starter": 3,
+      "openAccess": null
     },
     {
       "id": "fastcsp",
@@ -494,9 +911,10 @@
         "count": 14,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/f22e620409d78dd4e78f33dc75f2e2e653042866",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "defects-alloys",
@@ -541,9 +959,13 @@
         "count": 36,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/0964e80f6f79b4fe243bd938c78b3d7ff5347df0",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1088/2632-2153/adea2d",
+        "status": "gold"
+      }
     },
     {
       "id": "frozen-fine-tuning",
@@ -583,9 +1005,13 @@
         "count": 99,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/84ee3bedbce95d122f3389a5dcf049452ea35b6d",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": 7
+      "starter": 7,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s41524-025-01727-x",
+        "status": "gold"
+      }
     },
     {
       "id": "uma-family",
@@ -624,9 +1050,10 @@
         "count": 309,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/fb731024778c6e9104fa719217865b574c3e887a",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": 8
+      "starter": 8,
+      "openAccess": null
     },
     {
       "id": "matbench-discovery",
@@ -669,9 +1096,13 @@
         "count": 253,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/948ae0a4965c94d0ac0f5d3edb66a9a721d15178",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": 4
+      "starter": 4,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s42256-025-01055-1",
+        "status": "hybrid"
+      }
     },
     {
       "id": "phonon-benchmark",
@@ -714,9 +1145,13 @@
         "count": 120,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/7d595d983259347f8b07032b1fe10f0635c36a7d",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": 6
+      "starter": 6,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s41524-025-01650-1",
+        "status": "gold"
+      }
     },
     {
       "id": "mace-off",
@@ -754,9 +1189,13 @@
         "count": 311,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/bbd83fa59a215b2917e43ec278defdff37cf6bd8",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1021/jacs.4c07099",
+        "status": "hybrid"
+      }
     },
     {
       "id": "omol25",
@@ -796,9 +1235,10 @@
         "count": 123,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/b7feaa923a1aec0cbad81c44fa08942bf06abaa6",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "mof-phonons",
@@ -837,9 +1277,13 @@
         "count": 35,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/8ee0191628bc7719d81f64869c9aa82f7cb1032e",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s41524-025-01611-8",
+        "status": "gold"
+      }
     },
     {
       "id": "orb-v3",
@@ -877,9 +1321,10 @@
         "count": 165,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/70f03e8e69e13d9f603e19a85138ac288615698a",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "esen",
@@ -918,9 +1363,10 @@
         "count": 195,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/cd7077ce7f80d6d21c2c53355731cd919e6e8305",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "solid-ion-conductors",
@@ -963,9 +1409,10 @@
         "count": 7,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/0e2912e3cb877ce292463408a9fe0aaa73180859",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "systematic-softening",
@@ -1007,9 +1454,13 @@
         "count": 210,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/8f9d1638e987e6fb13fa7b05f9a6208eae9346c9",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": 5
+      "starter": 5,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s41524-024-01500-6",
+        "status": "gold"
+      }
     },
     {
       "id": "liquid-electrolytes",
@@ -1048,9 +1499,13 @@
         "count": 29,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/d10072fa9bdde25373958666609a5de756335dca",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1039/d5dd00025d",
+        "status": "diamond"
+      }
     },
     {
       "id": "dpa-2",
@@ -1089,9 +1544,13 @@
         "count": 192,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/4f0e03d296adddf0a6d4ca56f8a0cdf7fa9c1d90",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s41524-024-01493-2",
+        "status": "gold"
+      }
     },
     {
       "id": "orb",
@@ -1129,9 +1588,10 @@
         "count": 185,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/0ce7d746840f1f23d83e4f2e8926c34cf8f53ac0",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "surface-assessment",
@@ -1170,9 +1630,10 @@
         "count": 144,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/7e9788f17fa39ba41bd1061d6b01db1aabd57750",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "sevennet",
@@ -1209,9 +1670,10 @@
         "count": 312,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/da5c87b8917ba57dad8e65188cfd2ab4c6d2c325",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "mattersim",
@@ -1250,9 +1712,10 @@
         "count": 312,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/f3a6faf40543724b27399da31c7777a89051f3ad",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": null
     },
     {
       "id": "chgnet",
@@ -1291,9 +1754,13 @@
         "count": 1196,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/5ddc8f4a155f0ca74d6ebce3f366ad9d68819259",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": null
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s42256-023-00716-3",
+        "status": "hybrid"
+      }
     },
     {
       "id": "m3gnet",
@@ -1331,10 +1798,11 @@
         "count": 1185,
         "source": "Semantic Scholar",
         "url": "https://www.semanticscholar.org/paper/450bb2530e4fb48e828161d3e7741c5b4081c9a2",
-        "updated": "2026-10-24"
+        "updated": "2026-10-25"
       },
-      "starter": 2
+      "starter": 2,
+      "openAccess": null
     }
   ],
-  "citationsUpdated": "2026-10-24 14:03"
+  "citationsUpdated": "2026-10-25 05:59"
 }

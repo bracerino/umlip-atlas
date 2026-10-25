@@ -11,6 +11,7 @@
   "arxiv": "2501.01234 (or null)",
   "arxivVersion": null,
   "doi": "10.xxxx/xxxxx (or null)",
+  "openAccess": null,
   "type": "Development | Benchmark | Application",
   "focus": "Short sub-topic, e.g. Model release, Surface energies",
   "models": [

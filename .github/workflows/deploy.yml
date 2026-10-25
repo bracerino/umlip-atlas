@@ -29,14 +29,15 @@ jobs:
         with:
           node-version: 20
       - run: node --test tests/core.test.mjs
-      - name: Update citation counts
+      - name: Update citation counts and open-access links
         if: github.event_name != 'push'
         run: |
           node tools/update-citations.mjs
+          node tools/update-open-access.mjs || echo "Open-access lookup failed; previous links kept."
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add dist/papers.json
-          git diff --cached --quiet || (git commit -m "Update citation counts" && git push)
+          git diff --cached --quiet || (git commit -m "Update citation counts and open-access links" && git push)
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
