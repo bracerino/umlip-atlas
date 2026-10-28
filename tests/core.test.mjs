@@ -37,9 +37,15 @@ test('sort orders',()=>{
   const cited=selectPapers(papers,{sort:'cited'}).map(p=>p.citations?.count??-1);assert.deepEqual(cited,[...cited].sort((a,b)=>b-a));
 });
 test('deep links preserve filter and paper navigation state',()=>{
-  const state={...defaults,q:'surface & defect',model:'MACE',type:'Benchmark',area:'Surfaces',from:'2025-01-01',to:'2025-12-31',start:'1',sort:'path',paper:'systematic-softening'};
+  const state={...defaults,q:'surface & defect',model:'MACE',type:'Benchmark',area:'Surfaces',from:'2025-01-01',to:'2025-12-31',start:'1',release:'1',sort:'path',paper:'systematic-softening'};
   assert.deepEqual(parseHash(stateHash(state)),state);assert.equal(stateHash(defaults),'');
   assert.deepEqual(parseHash('#collection'),defaults);
   assert.equal(normalize({sort:'bad',type:'bad',from:'not-a-date'}).sort,'newest');
   assert.equal(escapeHTML('<script>"&'), '&lt;script&gt;&quot;&amp;');
+});
+test('foundation-model view lists exactly the papers that introduce a model',()=>{
+  assert.deepEqual(selectPapers(papers,{release:'1'}).map(p=>p.id).sort(),papers.filter(p=>p.introduces?.length).map(p=>p.id).sort());
+  for(const p of papers)if(p.introduces!==null)assert.ok(Array.isArray(p.introduces)&&p.introduces.length,`${p.id}: introduces`);
+  assert.equal(selectPapers(papers,{q:'MACE-MH-1',release:'1'})[0].id,'mace-mh-1');
+  assert.equal(normalize({release:'yes'}).release,'');
 });

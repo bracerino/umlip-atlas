@@ -19,6 +19,7 @@
       "models": [
         "MatterSim"
       ],
+      "introduces": null,
       "versions": "MatterSim-v1 1M, LoRA fine-tuned per crystal symmetry (SBFS-FT)",
       "areas": [
         "Thermal transport",
@@ -63,6 +64,7 @@
         "MatterSim",
         "UMA"
       ],
+      "introduces": null,
       "versions": "MACE-MH-1-OMAT, MACE-MP-0b3, MACE-OMAT-0, ORB-v3-consv-inf-OMAT, MatterSim-5M, UMA-S-1.1-OMAT",
       "areas": [
         "Bulk materials"
@@ -113,6 +115,7 @@
         "DPA",
         "Prophet"
       ],
+      "introduces": null,
       "versions": "ORB-v3, GRACE-2L-OAM-L, MACE-MPA-0, SevenNet-Omni-I12, MatRIS-10M-OAM, NequIP-OAM-XL, PET-OAM-XL, TACE-OAM-L, MatterSim-5M, DPA3-v2-MPtrj, Prophet-OAME-MBD",
       "areas": [
         "Bulk materials"
@@ -151,6 +154,9 @@
       "type": "Development",
       "focus": "Magnetic foundation model",
       "models": [
+        "MagPT"
+      ],
+      "introduces": [
         "MagPT"
       ],
       "versions": "MagPT (new; species, positions and vector magnetic moments as input)",
@@ -195,6 +201,7 @@
         "NequIP",
         "Prophet"
       ],
+      "introduces": null,
       "versions": "NequIP and Prophet (method applies to message-passing potentials unmodified)",
       "areas": [
         "Phonons"
@@ -235,6 +242,7 @@
       "models": [
         "Multiple models"
       ],
+      "introduces": null,
       "versions": "Stratification metric built from the latent spaces of several universal MLIPs",
       "areas": [
         "Datasets"
@@ -275,6 +283,7 @@
       "models": [
         "MACE"
       ],
+      "introduces": null,
       "versions": "MACE-MH-1 (MatPES r2SCAN head)",
       "areas": [
         "Ion transport"
@@ -318,6 +327,7 @@
         "MACE",
         "CHGNet"
       ],
+      "introduces": null,
       "versions": "UMA (uma-s-1p2, OMat task), MatRIS-10M-OAM, MACE-MPA-0, MACE-OMAT-0, CHGNet 0.3.0",
       "areas": [
         "Defects",
@@ -359,6 +369,7 @@
       "models": [
         "MACE"
       ],
+      "introduces": null,
       "versions": "MACE trained on <1% subsets of OMat24 (random, DIRECT, EnvTok) vs MACE-OMAT-0",
       "areas": [
         "Datasets",
@@ -401,6 +412,7 @@
         "MACE",
         "DPA"
       ],
+      "introduces": null,
       "versions": "Nine uMLIPs benchmarked; MACE-MH-1 and DPA4-Mini named in the abstract",
       "areas": [
         "Bulk materials",
@@ -446,6 +458,7 @@
         "eSEN",
         "UMA"
       ],
+      "introduces": null,
       "versions": "MACE-MATPES-PBE-0, CHGNet, eSEN-OAM, UMA-S",
       "areas": [
         "Bulk materials",
@@ -493,6 +506,7 @@
         "SevenNet",
         "CHGNet"
       ],
+      "introduces": null,
       "versions": "Foundation models compared in the paper; fine-tuning protocols included",
       "areas": [
         "Thermal transport",
@@ -521,6 +535,53 @@
       }
     },
     {
+      "id": "umof",
+      "title": "uMOF: A Universal Database, Benchmark, and Machine Learning Interatomic Potentials for Metal-Organic Frameworks",
+      "shortTitle": "uMOF: an r²SCAN-D4 dataset, experimental benchmark and fine-tuned MACE models for MOFs",
+      "authors": "Théo Jaffrelot Inizan, Prathami Divakar Kamath, Alin Marin Elena & Kristin A. Persson",
+      "date": "2026-08-28",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2608.28100",
+      "arxivVersion": 2,
+      "doi": null,
+      "type": "Development",
+      "focus": "MOF dataset and fine-tuned models",
+      "models": [
+        "MACE",
+        "UMA"
+      ],
+      "introduces": [
+        "uMOF-MH",
+        "uMOF-POLAR"
+      ],
+      "versions": "uMOF-MH (from the r²SCAN-D4 MatPES head of MACE-MH-1) and uMOF-POLAR (from MACE-POLAR-1-M); baselines MACE-MH-1 (±D3), MACE-POLAR-1-M, MACE-MP-MOF0-v2, MACE-DAC and UMA-ODAC25",
+      "areas": [
+        "MOFs",
+        "Datasets",
+        "Fine-tuning"
+      ],
+      "systems": "85,524 r²SCAN-D4 configurations of 19,950 MOFs across 79 elements: empty and gas-loaded frameworks, relaxations, equations of state and finite-temperature MD.",
+      "result": "Releases the uMOF dataset, a literature-mined benchmark of 3,986 verified property values (3,146 experimental) from 626 papers, and two fine-tuned MACE models. Bulk moduli and heat capacities match existing baselines, while gas adsorption enthalpies and isotherms improve sharply: about 4 kJ/mol MAE, more than 80% lower than MOF gas-capture models trained on up to ~1000× more data. A small (1.7%) share of MD frames is decisive for stability.",
+      "source": "https://arxiv.org/abs/2608.28100",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": "https://doi.org/10.6084/m9.figshare.33311829",
+      "alternateLabel": "Data, weights and code · figshare",
+      "note": "Preprint; not yet peer reviewed. Benchmark pipeline is part of ml-peg (github.com/ddmms/ml-peg).",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 0,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/e8802bb8e0ca48f3d7e45738dc834e5a1d5833cf",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
       "id": "nep89",
       "title": "NEP89: universal neuroevolution potential for inorganic and organic materials across 89 elements",
       "shortTitle": "A neuroevolution potential across 89 elements at near-empirical speed",
@@ -537,6 +598,9 @@
       "focus": "Model release",
       "models": [
         "NEP"
+      ],
+      "introduces": [
+        "NEP89"
       ],
       "versions": "NEP89 (GPUMD)",
       "areas": [
@@ -581,6 +645,9 @@
       "models": [
         "EquiformerV2"
       ],
+      "introduces": [
+        "eqV2 (OMat24)"
+      ],
       "versions": "EquiformerV2 models trained on OMat24, MPtraj and Alexandria",
       "areas": [
         "Datasets",
@@ -606,6 +673,186 @@
       "openAccess": null
     },
     {
+      "id": "dpa-3",
+      "title": "A graph neural network for the era of large atomistic models",
+      "shortTitle": "DPA-3: a line-graph-series network that follows scaling laws",
+      "authors": "Duo Zhang, Anyang Peng, Chun Cai, Wentao Li, Yuanchang Zhou, Jinzhe Zeng, Mingyu Guo, Chengqian Zhang, Bowen Li, Hong Jiang, Tong Zhu, Weile Jia, Linfeng Zhang & Han Wang",
+      "date": "2026-05-25",
+      "dateBasis": "Published online",
+      "venue": "npj Computational Materials",
+      "publisher": "Springer Nature",
+      "status": "Journal article",
+      "arxiv": "2506.01686",
+      "arxivVersion": 3,
+      "doi": "10.1038/s41524-026-02146-2",
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "DPA"
+      ],
+      "introduces": [
+        "DPA-3.1"
+      ],
+      "versions": "DPA3 architecture; DPA-3.1-3M large atomistic model trained on OpenLAM-v1 (DeePMD-kit)",
+      "areas": [
+        "Bulk materials",
+        "Molecules",
+        "Catalysis",
+        "Ion transport"
+      ],
+      "systems": "Molecules, bulk materials, surface and cluster catalysts, 2D materials and battery materials; 12 zero-shot downstream tasks.",
+      "result": "Introduces DPA3, a message-passing network on a line graph series (atoms, bonds, angles) with dataset encoding for multi-task training. Generalisation error follows a scaling law with model size, data and compute; DPA-3.1-3M has the lowest overall zero-shot error across 12 downstream tasks on OpenLAM-v1.",
+      "source": "https://doi.org/10.1038/s41524-026-02146-2",
+      "sourceLabel": "Publisher · DOI",
+      "alternate": "https://arxiv.org/abs/2506.01686",
+      "alternateLabel": "arXiv preprint",
+      "note": "Successor to DPA-2. Licence CC BY-NC-ND 4.0. DeepModeling community (DeePMD-kit).",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 65,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/61b1587438510fe2f44be4affc7353816931f633",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s41524-026-02146-2",
+        "status": "gold"
+      }
+    },
+    {
+      "id": "mace-mdp",
+      "title": "MACE-MDP: A General Dipole and Polarizability Model for Organic Molecules and Materials",
+      "shortTitle": "MACE-MDP: a foundation model for dipoles and polarizabilities, for IR and Raman spectra",
+      "authors": "Nils Gönnheimer, Karsten Reuter, Venkat Kapil & Johannes T. Margraf",
+      "date": "2026-03-09",
+      "dateBasis": "First posted on ChemRxiv",
+      "venue": "ChemRxiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": null,
+      "arxivVersion": null,
+      "doi": "10.26434/chemrxiv.15000716/v2",
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "MACE"
+      ],
+      "introduces": [
+        "MACE-MDP"
+      ],
+      "versions": "MACE-MDP (dipole moments and full anisotropic polarizability tensors; not an energy/force potential)",
+      "areas": [
+        "Molecules",
+        "Molecular crystals",
+        "Spectroscopy"
+      ],
+      "systems": "Organic molecules and condensed-phase organic materials; trained on SPICE-α, more than 1.8 million electric-field response calculations.",
+      "result": "Trains a MACE model that predicts dipole moments and full anisotropic polarizability tensors for organic systems at first-principles accuracy and a fraction of the cost. Combined with MD from an interatomic potential, it gives IR and Raman spectra of molecules and materials.",
+      "source": "https://doi.org/10.26434/chemrxiv.15000716/v2",
+      "sourceLabel": "Author preprint · ChemRxiv",
+      "alternate": "https://github.com/Nilsgoe/MACE-MDP",
+      "alternateLabel": "Code, weights and tutorials · GitHub",
+      "note": "Preprint; not yet peer reviewed. v1 (9 Mar 2026) was titled “MACE-MDP: A Foundation Model for Molecular Dipole Moments and Polarizabilities”; v2 posted 7 Apr 2026. Predicts response properties only, so pair it with a potential such as MACE-OFF or MACE-POLAR-1 for the dynamics. In MACE as the mace_mdp calculator; fine-tuning not yet supported.",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": null,
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.26434/chemrxiv.15000716/v2",
+        "status": "preprint"
+      }
+    },
+    {
+      "id": "matris",
+      "title": "MatRIS: Toward Reliable and Efficient Pretrained Machine Learning Interatomic Potentials",
+      "shortTitle": "MatRIS: an invariant model with linear-cost three-body attention",
+      "authors": "Yuanchang Zhou, Siyu Hu, Xiangyu Zhang, Hongyu Wang, Guangming Tan & Weile Jia",
+      "date": "2026-03-02",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2603.02002",
+      "arxivVersion": 3,
+      "doi": null,
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "MatRIS"
+      ],
+      "introduces": [
+        "MatRIS"
+      ],
+      "versions": "MatRIS (invariant MLIP with separable O(N) three-body attention)",
+      "areas": [
+        "Bulk materials",
+        "Phonons"
+      ],
+      "systems": "Matbench Discovery, MatPES, MDR phonons and molecular datasets.",
+      "result": "Uses attention to model three-body interactions in an invariant network, with a separable attention mechanism of linear complexity. Matches leading equivariant models on popular benchmarks (Matbench Discovery F1 up to 0.847) at a lower training cost.",
+      "source": "https://arxiv.org/abs/2603.02002",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed.",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 13,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/a7f6abc2b31126acf816b650f0878066670fd609",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "mace-polar-1",
+      "title": "MACE-POLAR-1: A Polarisable Electrostatic Foundation Model for Molecular Chemistry",
+      "shortTitle": "MACE-POLAR-1: long-range electrostatics and polarisation in a foundation model",
+      "authors": "Ilyes Batatia, William J. Baldwin, Domantas Kuryla, Joseph Hart, Elliott Kasoar, Alin M. Elena, Harry Moore, Mikołaj J. Gawkowski, Benjamin X. Shi, Venkat Kapil, Panagiotis Kourtis, Ioan-Bogdan Magdău & Gábor Csányi",
+      "date": "2026-02-23",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2602.19411",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "MACE"
+      ],
+      "introduces": [
+        "MACE-POLAR-1"
+      ],
+      "versions": "MACE-POLAR-1 models trained on OMol25",
+      "areas": [
+        "Molecules",
+        "Molecular crystals"
+      ],
+      "systems": "Molecular chemistry with variable charge and spin: thermochemistry, reaction barriers, conformers, transition-metal complexes, molecular crystals and protein–ligand complexes.",
+      "result": "Extends MACE with learnable charge and spin densities updated through polarisable (non-self-consistent) iterations and global charge equilibration via learnable Fukui functions. Trained on OMol25, it is competitive with hybrid DFT; long-range electrostatics give sub-kcal/mol X23-DMC lattice energies and a fourfold gain on protein–ligand interactions over short-ranged models.",
+      "source": "https://arxiv.org/abs/2602.19411",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed. Parent model of uMOF-POLAR.",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 43,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/11ede325e22762c7a6709b19e770756f56ff6dbb",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
       "id": "uma-catalysts",
       "title": "Performance of Meta’s Universal Model for Atoms across the Conformational and Configurational Space of Diverse Transition-Metal Catalysts",
       "shortTitle": "How reliable is UMA for catalyst conformers?",
@@ -623,6 +870,7 @@
       "models": [
         "UMA"
       ],
+      "introduces": null,
       "versions": "UMA; see source for evaluated checkpoint",
       "areas": [
         "Catalysis"
@@ -666,6 +914,7 @@
       "models": [
         "Multiple models"
       ],
+      "introduces": null,
       "versions": "Survey of MLIP foundation models",
       "areas": [
         "Review"
@@ -689,6 +938,53 @@
       "openAccess": null
     },
     {
+      "id": "grace-foundation",
+      "title": "Graph atomic cluster expansion for foundational machine learning interatomic potentials",
+      "shortTitle": "GRACE: atomic cluster expansion foundation models on a new accuracy–cost Pareto front",
+      "authors": "Yury Lysogorskiy, Anton Bochkarev & Ralf Drautz",
+      "date": "2026-02-08",
+      "dateBasis": "Published online",
+      "venue": "npj Computational Materials",
+      "publisher": "Springer Nature",
+      "status": "Journal article",
+      "arxiv": "2508.17936",
+      "arxivVersion": 2,
+      "doi": "10.1038/s41524-026-01979-1",
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "GRACE"
+      ],
+      "introduces": [
+        "GRACE"
+      ],
+      "versions": "GRACE foundation models (single- and two-layer variants) trained on several of the largest open materials datasets",
+      "areas": [
+        "Bulk materials",
+        "Fine-tuning"
+      ],
+      "systems": "Inorganic materials across the periodic table; fine-tuning and distillation to specialised tasks and simpler (ACE-type) potentials.",
+      "result": "Builds universal potentials on the graph atomic cluster expansion (GRACE) and benchmarks them extensively, setting a new Pareto front of accuracy versus efficiency among foundation potentials. Shows fine-tuning and knowledge distillation into simpler architectures without catastrophic forgetting.",
+      "source": "https://doi.org/10.1038/s41524-026-01979-1",
+      "sourceLabel": "Publisher · DOI",
+      "alternate": "https://arxiv.org/abs/2508.17936",
+      "alternateLabel": "arXiv preprint",
+      "note": "Architecture introduced in Bochkarev et al., PRX 2024 (arXiv:2311.16326). Open access (CC BY 4.0). Drautz group (ICAMS, Bochum).",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 84,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/c0b629d2572277e24ffcda341286ba17e3b8b022",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s41524-026-01979-1",
+        "status": "gold"
+      }
+    },
+    {
       "id": "platonic-representations",
       "title": "Platonic representation of foundation machine learning interatomic potentials",
       "shortTitle": "Do different foundation models learn a shared geometry?",
@@ -708,6 +1004,7 @@
         "SevenNet",
         "Orb"
       ],
+      "introduces": null,
       "versions": "MACE-MP-0 variants; MACE-omat; Seven-omat; Orb-v3 variants",
       "areas": [
         "Representations",
@@ -754,6 +1051,7 @@
         "Orb",
         "SevenNet"
       ],
+      "introduces": null,
       "versions": "MACE-MATPES-PBE-0, Orb-v3 and SevenNet-0",
       "areas": [
         "Defects",
@@ -781,6 +1079,55 @@
       }
     },
     {
+      "id": "pet-mad",
+      "title": "PET-MAD as a lightweight universal interatomic potential for advanced materials modeling",
+      "shortTitle": "PET-MAD: a small, highly consistent dataset for a universal potential",
+      "authors": "Arslan Mazitov, Filippo Bigi, Matthias Kellner, Paolo Pegolo, Davide Tisi, Guillaume Fraux, Sergey Pozdnyakov, Philip Loche & Michele Ceriotti",
+      "date": "2025-11-27",
+      "dateBasis": "Published online",
+      "venue": "Nature Communications",
+      "publisher": "Springer Nature",
+      "status": "Journal article",
+      "arxiv": "2503.14118",
+      "arxivVersion": 2,
+      "doi": "10.1038/s41467-025-65662-7",
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "PET"
+      ],
+      "introduces": [
+        "PET-MAD"
+      ],
+      "versions": "PET-MAD (Point Edge Transformer trained on the MAD dataset)",
+      "areas": [
+        "Bulk materials",
+        "Molecules",
+        "Surfaces",
+        "Phonons"
+      ],
+      "systems": "Inorganic and organic solids, molecules and surfaces; advanced simulations of six materials including thermal and nuclear quantum fluctuations and phase transitions.",
+      "result": "Trains an unconstrained (non-equivariant) Point Edge Transformer on MAD, a small dataset of stable inorganic and organic solids systematically perturbed for diversity and computed at one consistent level of theory. It is competitive with larger uMLIPs on inorganic solids, reliable for molecules and surfaces, stable and fast in MD, and cheap to fine-tune to full DFT accuracy.",
+      "source": "https://doi.org/10.1038/s41467-025-65662-7",
+      "sourceLabel": "Publisher · DOI",
+      "alternate": "https://arxiv.org/abs/2503.14118",
+      "alternateLabel": "arXiv preprint",
+      "note": "Open access (CC BY 4.0). Ceriotti group (COSMO, EPFL).",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 59,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/fd8e95500374b7685d9d8fe85c889ebd02741aea",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s41467-025-65662-7",
+        "status": "gold"
+      }
+    },
+    {
       "id": "mace-foundation",
       "title": "A foundation model for atomistic materials chemistry",
       "shortTitle": "The MACE-MP-0 foundation-model reference",
@@ -797,6 +1144,9 @@
       "focus": "Model release",
       "models": [
         "MACE"
+      ],
+      "introduces": [
+        "MACE-MP-0"
       ],
       "versions": "MACE-MP-0 series; published study primarily MACE-MP-0b3",
       "areas": [
@@ -825,6 +1175,143 @@
       "openAccess": null
     },
     {
+      "id": "mace-mh-1",
+      "title": "Cross Learning between Electronic Structure Theories for Unifying Molecular, Surface, and Inorganic Crystal Foundation Force Fields",
+      "shortTitle": "MACE-MH-1: one multi-head model for molecules, surfaces and crystals",
+      "authors": "Ilyes Batatia, Chen Lin, Joseph Hart, Elliott Kasoar, Alin M. Elena, Sam Walton Norwood, Thomas Wolf & Gábor Csányi",
+      "date": "2025-10-29",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2510.25380",
+      "arxivVersion": 1,
+      "doi": null,
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "MACE"
+      ],
+      "introduces": [
+        "MACE-MH-1"
+      ],
+      "versions": "MACE-MH-1 with heads for inorganic crystals (OMat PBE, MatPES r²SCAN), molecules (OMol), surfaces (OC20) and more; 89 elements",
+      "areas": [
+        "Bulk materials",
+        "Molecules",
+        "Surfaces",
+        "Fine-tuning"
+      ],
+      "systems": "Inorganic crystals, molecular systems, surface chemistry and reactive organic chemistry, each at its own level of electronic-structure theory.",
+      "result": "Adds more cross-element weight sharing and non-linear factors in the product basis to MACE, then uses multi-head replay post-training to transfer knowledge between datasets computed with different DFT settings. One model reaches state-of-the-art accuracy across several domains, improving molecular and surface properties while keeping materials accuracy.",
+      "source": "https://arxiv.org/abs/2510.25380",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": "https://huggingface.co/mace-foundations/mace-mh-1",
+      "alternateLabel": "Model weights · Hugging Face",
+      "note": "Preprint; not yet peer reviewed. Weights on Hugging Face (mace-foundations/mace-mh-1); in Python: mace_mp(model=\"mh-1\", head=...). Parent model of uMOF-MH.",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 61,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/1b9b068e481262d2896e079adb9278473bcd986f",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "sevennet-omni",
+      "title": "Optimizing Cross-Domain Transfer for Universal Machine Learning Interatomic Potentials",
+      "shortTitle": "SevenNet-Omni: one model trained on fifteen databases across domains and functionals",
+      "authors": "Jaesun Kim, Jinmu You, Yutack Park, Yunsung Lim, Yujin Kang, Jisu Kim, Haekwan Jeon, Suyeon Ju, Deokgi Hong, Seung Yul Lee, Saerom Choi, Yongdeok Kim, Jae W. Lee & Seungwu Han",
+      "date": "2025-10-13",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2510.11241",
+      "arxivVersion": 3,
+      "doi": null,
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "SevenNet"
+      ],
+      "introduces": [
+        "SevenNet-Omni"
+      ],
+      "versions": "SevenNet-Omni (multi-domain training with selective regularization and a domain-bridging set)",
+      "areas": [
+        "Bulk materials",
+        "Molecules",
+        "Surfaces",
+        "Catalysis",
+        "MOFs"
+      ],
+      "systems": "Molecules, crystals and surfaces from fifteen open databases; adsorption on metal surfaces and in MOFs; r²SCAN energetics.",
+      "result": "Jointly optimises shared and task-specific parameters with selective regularisation, plus a small domain-bridging set (0.1%) that aligns potential-energy surfaces across datasets. SevenNet-Omni reaches adsorption-energy errors below 0.06 eV on metal surfaces and 0.1 eV in MOFs, and reproduces r²SCAN energetics with only 0.5% r²SCAN data.",
+      "source": "https://arxiv.org/abs/2510.11241",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Preprint; not yet peer reviewed. Han group (Seoul National University).",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 53,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/b5878dd521b2b113ce9a534efbcc2615a724ff28",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
+      "id": "nequix",
+      "title": "Training a Foundation Model for Materials on a Budget",
+      "shortTitle": "Nequix: a 700K-parameter NequIP-style foundation model trained in 100 GPU-hours",
+      "authors": "Teddy Koker, Mit Kotak & Tess Smidt",
+      "date": "2025-08-22",
+      "dateBasis": "First posted on arXiv",
+      "venue": "arXiv",
+      "publisher": null,
+      "status": "Preprint / report",
+      "arxiv": "2508.16067",
+      "arxivVersion": 2,
+      "doi": null,
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "NequIP"
+      ],
+      "introduces": [
+        "Nequix"
+      ],
+      "versions": "Nequix (simplified NequIP with equivariant RMS layer norm and the Muon optimizer), trained on MPtrj",
+      "areas": [
+        "Bulk materials",
+        "Phonons"
+      ],
+      "systems": "Inorganic crystals: Matbench Discovery stability and MDR phonon benchmarks.",
+      "result": "Pairs a simplified NequIP with modern training practice to cut compute: 700K parameters trained in 100 A100 GPU-hours. Ranks third overall on Matbench Discovery and the MDR phonon benchmark at about 20× lower training cost than most methods, with two orders of magnitude faster inference than the top-ranked model.",
+      "source": "https://arxiv.org/abs/2508.16067",
+      "sourceLabel": "Author preprint · arXiv",
+      "alternate": "https://github.com/atomicarchitects/nequix",
+      "alternateLabel": "Code and weights · GitHub",
+      "note": "Preprint; not yet peer reviewed. Weights and code: github.com/atomicarchitects/nequix.",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 10,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/3a29356bf1dfe8859c0195a8f828e1a53dfc60a6",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": null
+    },
+    {
       "id": "fastcsp",
       "title": "FastCSP: Accelerated Molecular Crystal Structure Prediction with Universal Model for Atoms",
       "shortTitle": "Molecular crystal structure prediction with UMA alone",
@@ -842,6 +1329,7 @@
       "models": [
         "UMA"
       ],
+      "introduces": null,
       "versions": "UMA, no system-specific fine-tuning",
       "areas": [
         "Molecular crystals",
@@ -889,6 +1377,7 @@
         "DPA",
         "CHGNet"
       ],
+      "introduces": null,
       "versions": "26 checkpoints in 7 families: eqV2 (mp, omat, omat-mp-salex; 31M–153M), MACE-MP-0/MPA-0/OMAT-0, Orb-v2 variants, MatterSim-v1 1M/5M, GRACE-1L/2L (MP, OAM), DPA3-v1, CHGNet 0.3.0",
       "areas": [
         "Defects",
@@ -934,6 +1423,7 @@
       "models": [
         "MACE"
       ],
+      "introduces": null,
       "versions": "MACE-MP foundation models, fine-tuned with frozen layers",
       "areas": [
         "Fine-tuning",
@@ -978,6 +1468,9 @@
       "type": "Development",
       "focus": "Model release",
       "models": [
+        "UMA"
+      ],
+      "introduces": [
         "UMA"
       ],
       "versions": "UMA small and medium model family",
@@ -1027,6 +1520,7 @@
         "CHGNet",
         "M3GNet"
       ],
+      "introduces": null,
       "versions": "Models on the initial leaderboard; the online leaderboard is updated continuously",
       "areas": [
         "Bulk materials",
@@ -1076,6 +1570,7 @@
         "MatterSim",
         "MACE"
       ],
+      "introduces": null,
       "versions": "Universal models available at the time of the study",
       "areas": [
         "Phonons",
@@ -1119,6 +1614,9 @@
       "focus": "Model release",
       "models": [
         "MACE"
+      ],
+      "introduces": [
+        "MACE-OFF"
       ],
       "versions": "MACE-OFF (small, medium, large)",
       "areas": [
@@ -1166,6 +1664,7 @@
         "GemNet-OC",
         "UMA"
       ],
+      "introduces": null,
       "versions": "Baseline models released with the dataset",
       "areas": [
         "Datasets",
@@ -1207,6 +1706,7 @@
       "models": [
         "MACE"
       ],
+      "introduces": null,
       "versions": "MACE-MP-0 and fine-tuned MACE-MP-MOF0",
       "areas": [
         "MOFs",
@@ -1252,6 +1752,9 @@
       "models": [
         "Orb"
       ],
+      "introduces": [
+        "Orb-v3"
+      ],
       "versions": "Orb-v3 model family (conservative and direct-force variants)",
       "areas": [
         "Bulk materials",
@@ -1291,6 +1794,9 @@
       "type": "Development",
       "focus": "Architecture",
       "models": [
+        "eSEN"
+      ],
+      "introduces": [
         "eSEN"
       ],
       "versions": "eSEN models (ICML 2025)",
@@ -1340,6 +1846,7 @@
         "M3GNet",
         "Orb"
       ],
+      "introduces": null,
       "versions": "MatterSim, MACE, SevenNet, CHGNet, M3GNet and Orb (ORBFF)",
       "areas": [
         "Ion transport",
@@ -1383,6 +1890,7 @@
         "CHGNet",
         "M3GNet"
       ],
+      "introduces": null,
       "versions": "MACE-MP-0, CHGNet and M3GNet evaluated in the study",
       "areas": [
         "Surfaces",
@@ -1429,6 +1937,7 @@
       "models": [
         "SevenNet"
       ],
+      "introduces": null,
       "versions": "SevenNet-0, plus a fine-tuned version",
       "areas": [
         "Ion transport",
@@ -1473,6 +1982,9 @@
       "focus": "Model release",
       "models": [
         "DPA"
+      ],
+      "introduces": [
+        "DPA-2"
       ],
       "versions": "DPA-2 (DeePMD-kit)",
       "areas": [
@@ -1519,6 +2031,9 @@
       "models": [
         "Orb"
       ],
+      "introduces": [
+        "Orb"
+      ],
       "versions": "Orb (v1/v2 family described in the report)",
       "areas": [
         "Bulk materials",
@@ -1562,6 +2077,7 @@
         "CHGNet",
         "M3GNet"
       ],
+      "introduces": null,
       "versions": "MACE, CHGNet and M3GNet as evaluated in the 2024 study",
       "areas": [
         "Surfaces"
@@ -1601,6 +2117,9 @@
       "focus": "Model release",
       "models": [
         "SevenNet"
+      ],
+      "introduces": [
+        "SevenNet-0"
       ],
       "versions": "SevenNet (NequIP architecture); pretrained SevenNet-0 on Materials Project data",
       "areas": [
@@ -1642,6 +2161,9 @@
       "models": [
         "MatterSim"
       ],
+      "introduces": [
+        "MatterSim"
+      ],
       "versions": "MatterSim model described in arXiv:2405.04967",
       "areas": [
         "Bulk materials",
@@ -1667,6 +2189,54 @@
       "openAccess": null
     },
     {
+      "id": "gnome",
+      "title": "Scaling deep learning for materials discovery",
+      "shortTitle": "GNoME: scaled graph networks discover millions of stable crystals",
+      "authors": "Amil Merchant, Simon Batzner, Samuel S. Schoenholz, Muratahan Aykol, Gowoon Cheon & Ekin Dogus Cubuk",
+      "date": "2023-11-29",
+      "dateBasis": "Published online",
+      "venue": "Nature",
+      "publisher": "Springer Nature",
+      "status": "Journal article",
+      "arxiv": null,
+      "arxivVersion": null,
+      "doi": "10.1038/s41586-023-06735-9",
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "GNoME"
+      ],
+      "introduces": [
+        "GNoME"
+      ],
+      "versions": "GNoME graph networks for stability prediction and the GNoME interatomic potential (NequIP-type) trained on the generated relaxations",
+      "areas": [
+        "Materials discovery",
+        "Bulk materials",
+        "Ion transport"
+      ],
+      "systems": "Inorganic crystals generated by substitution and random structure search; zero-shot MD for ionic conductivity.",
+      "result": "Shows that graph networks trained by large-scale active learning keep improving with data, discovering about 2.2 million stable structures (381,000 on the updated convex hull). The interatomic potential trained on the resulting relaxations shows zero-shot generalisation, e.g. predicting ionic conductivity from MD.",
+      "source": "https://doi.org/10.1038/s41586-023-06735-9",
+      "sourceLabel": "Publisher · DOI",
+      "alternate": null,
+      "alternateLabel": null,
+      "note": "Google DeepMind. Seminal scaling result for universal materials models. Open access (CC BY 4.0).",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 1862,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/4e08141db0f2aa01afe903d312011c7d3d7acc46",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1038/s41586-023-06735-9",
+        "status": "hybrid"
+      }
+    },
+    {
       "id": "chgnet",
       "title": "CHGNet as a pretrained universal neural network potential for charge-informed atomistic modelling",
       "shortTitle": "The charge-informed foundation for inorganic materials",
@@ -1684,6 +2254,9 @@
       "models": [
         "CHGNet"
       ],
+      "introduces": [
+        "CHGNet"
+      ],
       "versions": "Original CHGNet model",
       "areas": [
         "Bulk materials",
@@ -1696,7 +2269,7 @@
       "sourceLabel": "Publisher · DOI",
       "alternate": "https://github.com/CederGroupHub/chgnet",
       "alternateLabel": "Official code",
-      "note": "Included as a foundational reference, not as a new model release.",
+      "note": "The original CHGNet model paper; a common baseline in later benchmarks.",
       "lastChecked": "2026-10-24",
       "read": false,
       "citations": {
@@ -1709,6 +2282,54 @@
       "openAccess": {
         "url": "https://doi.org/10.1038/s42256-023-00716-3",
         "status": "hybrid"
+      }
+    },
+    {
+      "id": "alignn-ff",
+      "title": "Unified graph neural network force-field for the periodic table: solid state applications",
+      "shortTitle": "ALIGNN-FF: a line-graph network force field for 89 elements",
+      "authors": "Kamal Choudhary, Brian DeCost, Lily Major, Keith Butler, Jeyan Thiyagalingam & Francesca Tavazza",
+      "date": "2023-01-23",
+      "dateBasis": "Published online (Crossref registration date)",
+      "venue": "Digital Discovery",
+      "publisher": "Royal Society of Chemistry",
+      "status": "Journal article",
+      "arxiv": "2209.05554",
+      "arxivVersion": 2,
+      "doi": "10.1039/d2dd00096b",
+      "type": "Development",
+      "focus": "Model release",
+      "models": [
+        "ALIGNN"
+      ],
+      "introduces": [
+        "ALIGNN-FF"
+      ],
+      "versions": "ALIGNN-FF trained on JARVIS-DFT",
+      "areas": [
+        "Bulk materials",
+        "Alloys",
+        "Materials discovery"
+      ],
+      "systems": "Solids from JARVIS-DFT (about 75,000 materials); structure optimisation of Crystallography Open Database entries and genetic-algorithm structure prediction for alloys.",
+      "result": "Trains an atomistic line graph neural network force field on JARVIS-DFT (307,113 of about 4 million energy–force entries) covering 89 elements, and applies it to fast structure relaxation and crystal-structure prediction for alloys.",
+      "source": "https://doi.org/10.1039/d2dd00096b",
+      "sourceLabel": "Publisher · DOI",
+      "alternate": "https://arxiv.org/abs/2209.05554",
+      "alternateLabel": "arXiv preprint",
+      "note": "One of the early universal force fields, alongside M3GNet. NIST JARVIS.",
+      "lastChecked": "2026-10-28",
+      "read": false,
+      "citations": {
+        "count": 26,
+        "source": "Semantic Scholar",
+        "url": "https://www.semanticscholar.org/paper/ae35aa1c68a28c43837397dfaeb579c1d16ff1cb",
+        "updated": "2026-10-28"
+      },
+      "starter": null,
+      "openAccess": {
+        "url": "https://doi.org/10.1039/d2dd00096b",
+        "status": "diamond"
       }
     },
     {
@@ -1727,6 +2348,9 @@
       "type": "Development",
       "focus": "Model release",
       "models": [
+        "M3GNet"
+      ],
+      "introduces": [
         "M3GNet"
       ],
       "versions": "M3GNet universal IAP trained on Materials Project relaxation trajectories",
@@ -1753,5 +2377,5 @@
       "openAccess": null
     }
   ],
-  "citationsUpdated": "2026-10-28 11:48"
+  "citationsUpdated": "2026-10-28 12:35"
 }
